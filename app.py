@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
+from gevent.pywsgi import WSGIServer
 import random
 
 app = Flask(__name__)
@@ -15,6 +16,8 @@ class ragister(db.Model):
 
     def __repr__(self) -> str:
         return f"{self.sno} - {self.naam} - {self.city}"
+
+# other routes here 
 
 @app.route('/')
 def index():
@@ -102,10 +105,12 @@ def Ragister():
     print(allragistration)
     return render_template('Ragister.html', allragistration=allragistration)
     
-    
+def run_gevent():
+    http_server = WSGIServer(('', 8080), app)
+    http_server.serve_forever()   
 
 if __name__=="__main__":
         with app.app_context():
             db.create_all()
-        app.run(debug=True)
+        run_gevent()
 
