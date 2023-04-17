@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ragister form</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="{{ url_for('static',filename='stylesheet.css') }}" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">DJ.Dhanoo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            style="--bs-scroll-height: 100px"
+          >
+            <li class="nav-item">
+              <a class="nav-link" href="\index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="\About.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="\Dj.html">Dj.Dhanoo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="\Ragister.html">Ragister</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="\booking.html">Booking</a>
+                </li>
+                <li><a class="dropdown-item" href="\About.html">Aboutus</a></li>
+                <li><a class="dropdown-item" href="\blogs.html">blog</a></li>
+                <li>
+                  <a class="dropdown-item" href="\project.html">project</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Streaming</a></li>
+                <li>
+                  <a class="dropdown-item" href="\achievement.html"
+                    >Achievement</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+
+    <div class="container">
+        <h1> <center>Registration</center></h1>
+        <p><center>On first 300 registrations will get discount on Dj.Dhanoo song</center></p>
+        <form action="#"  method="post">
+            
+            <div class="mb-3">
+                <label for="name1" class="form-label">NAME</label>
+                <input type="text" class="form-control" name="name1" id="name1" required>
+              </div>
+              <div class="mb-3">
+                <label for="Email1" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="Email1" id="Email1" aria-describedby="emailHelp" required>
+                <div id="emailHelp"  class="form-text">We'll never share your email with anyone else. </div>
+              </div>
+              <div class="mb-3">
+                <label for="cityn1" class="form-label">Your City</label>
+                <input type="text" class="form-control" name="cityn" id="cityn1" required>
+              </div>
+           
+              <div class="mb-3">
+              <label for="Password1" class="form-label">Password</label>
+              <input type="password" class="form-control" name="Password1" id="Password1" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+
+          
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">SNo</th>
+                <th scope="col">name</th>
+                <th scope="col">FROM</th>
+                <th scope="col">Confirmation</th>
+              </tr>
+            </thead>
+            <tbody>
+            {%for ragister in allragistration %}
+              <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{ragister.naam}}</td>
+                <td>{{ragister.city}}</td>
+                <td>conform</td>
+              </tr>
+            {% endfor %}
+          </table>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <h3>Dhananjay Sharma</h3>
+        <p>Social Media Presence</p>
+        <ul class="socials">
+          <li>
+            <a href="https://www.linkedin.com/in/dhananjay-sharma-3b209a203"
+              ><i class="fa fa-linkedin-square"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/xenophiliamee"
+              ><i class="fa fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCpIxQ7n1Vx0tzgQGHrECSeQ"
+              ><i class="fa fa-youtube"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/creative__innerme/"
+              ><i class="fa fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/dhananjay.sharma.7967"
+              ><i class="fa fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/Dhananj68148058?t=cBPR39GAg_yi6SI326bIAw&s=09"
+              ><i class="fa fa-twitter"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy; <a href="\Dj.html">Dj.Dhanoo</a></p>
+        <div class="footer-menu">
+          <ul class="f-menu">
+            <li><a href="\index.html">Home</a></li>
+            <li><a href="\About.html">About</a></li>
+            <li><a href="booking.html">Signin</a></li>
+            <li><a href="\blogs.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+        </footer>
+  </body>
+</html>

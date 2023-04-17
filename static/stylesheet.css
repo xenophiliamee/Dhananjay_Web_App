@@ -1,0 +1,323 @@
+
+body{
+    background: #fcfcfc;
+    font-family: sans-serif;
+}
+
+.Section {
+    padding: 2rem;
+}
+
+.Section h1 {
+    text-align: center;
+}
+
+.img.avatar { 
+    width: 40%;
+    border-radius: 50%;
+}
+
+/** links **/
+.link {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.primary-link {
+    background-color: black;
+    border-radius: 0.5rem;
+    color: white
+}
+
+.secondary-link {
+    color: black;
+    border-radius: 0.5rem;
+    border: 2px solid var(--primary-color);
+}
+
+/** Header**/
+
+.Hero {
+    padding: 2rem;
+}
+
+.Hero .Hero-image {
+    max-width: 250px;
+    Display: block;
+    margin: auto;
+}
+
+.Hero .Hero-Heading {
+    padding-top: 1rem;
+    color: #a1a1aa;
+    text-align: center;
+}
+
+.Hero .Hero-Heading .Hero-hilight {
+    color: black;
+}
+
+blink {
+    animation: 1s linear infinite condemned_blink_effect;
+  }
+  
+  @keyframes condemned_blink_effect {
+    0% {
+      visibility: hidden;
+    }
+    50% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    position: absolute;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: auto;
+
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+
+    border-radius: 50%;
+
+}
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+
+
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 99vw;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.footer-bottom p{
+    float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom p a{
+  color:#44bae8;
+  font-size: 16px;
+  text-decoration: none;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.footer-menu{
+  float: right;
+
+}
+.footer-menu ul{
+  display: flex;
+}
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+.footer-menu ul li a{
+  color: #cfd2d6;
+  text-decoration: none;
+}
+.footer-menu ul li a:hover{
+  color: #27bcda;
+}
+
+@media (max-width:500px) {
+.footer-menu ul{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+}
+.container-center {
+    max-width: 600px;
+    margin: auto;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+    
+}
+
+/* Add Zoom Animation */
+        
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+    
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  
+}
+
+/* Center the image and position the close button */
+.imgcontainera {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+  
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  
+}
+
+.vid-cont {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.vid-cont .vid {
+    height: 9rem;
+        width: 16rem;
+    margin: 2rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+    overflow: hidden;
+    border-radius: 1rem;
+
+}
+.cont .hea {
+    font-size: 3rem;
+    margin: 2rem 0;
+    text-transform: capitalize;
+    color: var(--perple);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2rem;
+    text-align: center;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .5);
+}
