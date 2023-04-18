@@ -59,12 +59,6 @@ def About():
 def Social_media():
     return render_template('/Social_media.html')
 
-
-    
-    
-
-
-
 @app.route('/create_account', methods=['POST'])
 def create_account():
     username = request.form['email']
@@ -108,5 +102,5 @@ def Ragister():
 
 
 if "__name__"=="__main__":
-        app.run(debug=True)
+    app.run(host='0.0.0.0', debug=False)
 
