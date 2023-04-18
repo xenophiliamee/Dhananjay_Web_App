@@ -108,6 +108,6 @@ def run_gevent():
     http_server = WSGIServer(('', 8080), app)
     http_server.serve_forever()   
 
-if __name__=="__main__":
+if "__name__"=="__main__":
         app.run(debug=True)
 
