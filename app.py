@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
-from gevent.pywsgi import WSGIServer
 import random
 
 app = Flask(__name__)
@@ -106,9 +105,7 @@ def Ragister():
     print(allragistration)
     return render_template('Ragister.html', allragistration=allragistration)
     
-def run_gevent():
-    http_server = WSGIServer(('0.0.0.0', 8080), app)
-    http_server.serve_forever()   
+
 
 if "__name__"=="__main__":
         app.run(debug=True)
