@@ -106,7 +106,7 @@ def Ragister():
     return render_template('Ragister.html', allragistration=allragistration)
     
 def run_gevent():
-    http_server = WSGIServer(('', 8080), app)
+    http_server = WSGIServer(('0.0.0.0', 8080), app)
     http_server.serve_forever()   
 
 if "__name__"=="__main__":
