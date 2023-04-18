@@ -6,6 +6,7 @@ import random
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///jay.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'Dhananj2001'
 db = SQLAlchemy(app)
 
 class ragister(db.Model):

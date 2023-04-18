@@ -1,4 +1,6 @@
-from app import app as application
+import sys
+sys.path.insert(0, 'app.py')
 
-if __name__ == "__main__":
-    application.run()
+from app import app as application
+application.secret_key = 'Dhananj2001'
+
