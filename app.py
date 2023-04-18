@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
-from gevent.pywsgi import WSGIServer
 import random
 
 app = Flask(__name__)
@@ -110,7 +109,5 @@ def run_gevent():
     http_server.serve_forever()   
 
 if __name__=="__main__":
-        with app.app_context():
-            db.create_all()
-        run_gevent()
+        app.run(debug=True)
 
