@@ -3,10 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 import random
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///jay.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jay.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = 'Dhananj2001'
+
 db = SQLAlchemy(app)
+
+
+    
 
 class ragister(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
@@ -16,7 +19,8 @@ class ragister(db.Model):
 
     def __repr__(self) -> str:
         return f"{self.sno} - {self.naam} - {self.city}"
-
+with app.app_context():
+    db.create_all()
 # other routes here 
 
 @app.route('/')
@@ -102,5 +106,5 @@ def Ragister():
 
 
 if __name__=="__main__":
-    app.run(host='0.0.0.0', debug=False)
+    app.run(host="0.0.0.0", port=8080)
 
